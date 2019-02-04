@@ -6,6 +6,8 @@
 
     <groupId>com.saboor922.docker.sample.gatewayServer</groupId>
     <artifactId>gatewayServer</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>com.saboor922.docker.sample</groupId>

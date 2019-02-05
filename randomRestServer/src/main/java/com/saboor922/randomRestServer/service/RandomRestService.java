@@ -4,6 +4,6 @@ import com.saboor922.randomRestServer.domain.Quote;
 
 public interface RandomRestService {
 
-    Quote randomClient();
+    Quote randomClient(String randomUrl);
 
 }

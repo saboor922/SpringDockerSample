@@ -4,6 +4,7 @@ import com.saboor922.docker.sample.vehicleServer.domain.Vehicle;
 import com.saboor922.docker.sample.vehicleServer.error.ApiError;
 import com.saboor922.docker.sample.vehicleServer.service.implementation.VehicleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RefreshScope
 public class VehicleController {
 
     @Autowired

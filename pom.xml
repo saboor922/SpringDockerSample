@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.saboor922.docker.sample</groupId>
-    <artifactId>dockerSample</artifactId>
+    <artifactId>Spring-Docker-Microservice-Architecture-Practice</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1</version>
 
@@ -17,11 +17,11 @@
     </parent>
 
     <modules>
-        <module>configServer</module>
-        <module>discoveryServer</module>
-        <module>gatewayServer</module>
-        <module>randomRestServer</module>
-        <module>vehicleServer</module>
+        <module>configService</module>
+        <module>discoveryService</module>
+        <module>gatewayService</module>
+        <module>randomRestService</module>
+        <module>vehicleService</module>
     </modules>
 
 </project>

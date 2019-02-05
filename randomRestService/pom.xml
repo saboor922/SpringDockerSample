@@ -10,9 +10,10 @@
     <description>A REST API Micorservice that consumes a REST API</description>
 
     <parent>
-        <groupId>com.saboor922.docker.sample</groupId>
-        <artifactId>dockerSample</artifactId>
-        <version>0.0.1</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>

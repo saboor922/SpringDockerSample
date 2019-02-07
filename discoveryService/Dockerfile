@@ -10,5 +10,6 @@ ENTRYPOINT ["java", "-jar",\
             "--spring.config.name=discoveryService",\
             "--eureka.client.serviceUrl.defaultZone:http://localhost:9001/",\
             "--spring.profiles.active=development",\
-            "--spring.cloud.config.uri=http://localhost:9000"]
+            "--spring.cloud.config.uri=http://config-service:9000",\
+            "--management.endpoints.web.exposure.include=*"]
 EXPOSE 9001

@@ -23,7 +23,7 @@ services:
     ports:
       - 9001:9001
     environment:
-      SPRING_CLOUD_CONFIG_URI: "http://config-service:9000"
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:9000
     networks:
       - docker_network
   random-rest-service:
@@ -41,6 +41,9 @@ services:
     depends_on:
       - config-service
       - discovery-service
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:9000
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-service:9001/eureka
     networks:
       - docker_network
   vehicle-service:
@@ -58,9 +61,8 @@ services:
       - discovery-service
       - vehicle-mongodb
     environment:
-      SPRING_CLOUD_CONFIG_URI: "http://config-service:9000"
-      SPRING_DATA_MONGODB_HOST: "vehicle-mongodb"
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://discovery-service:9001"
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:9000
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-service:9001/eureka
     logging:
       driver: json-file
     networks:

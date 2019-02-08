@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./configService/Dockerfile
-    image: saboor922/repo/config-service:latest
+    image: saboor922/config-service:latest
     expose:
       - 9000
     ports:
@@ -17,7 +17,7 @@ services:
     build:
       context: .
       dockerfile: ./discoveryService/Dockerfile
-    image: saboor922/repo/discovery-service:latest
+    image: saboor922/discovery-service:latest
     expose:
       - 9001
     ports:
@@ -26,12 +26,12 @@ services:
       - SPRING_CLOUD_CONFIG_URI=http://config-service:9000
     networks:
       - docker_network
-  random-rest-service:
+  random-service:
     container_name: random-rest-service
     build:
       context: .
       dockerfile: ./randomRestService/Dockerfile
-    image: saboor922/repo/random-rest-service:latest
+    image: saboor922/random-service:latest
     expose:
       - 8081
     ports:
@@ -51,7 +51,7 @@ services:
     build:
       context: .
       dockerfile: ./vehicleService/Dockerfile
-    image: saboor922/repo/vehicle-service:latest
+    image: saboor922/vehicle-service:latest
     expose:
       - 8082
     ports:
@@ -69,7 +69,7 @@ services:
       - docker_network
   vehicle-mongodb:
     container_name: vehicle-mongodb
-    image: mongo:latest
+    image: saboor922/vehicle-mongodb:latest
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null

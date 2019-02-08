@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: discovery-service
+  name: discovery-service
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: discovery-service
+    spec:
+      containers:
+      - env:
+        - name: SPRING_CLOUD_CONFIG_URI
+          value: http://config-service:9000
+        image: saboor922/discovery-service:latest
+        name: discovery-service
+        ports:
+        - containerPort: 9001
+        resources: {}
+      restartPolicy: Always
+status: {}

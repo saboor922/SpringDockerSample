@@ -13,6 +13,6 @@ public interface VehicleRepository extends MongoRepository<Vehicle, String>, Cus
 
     List<Vehicle> findByManufacturerIgnoreCase(String manufacturer);
 
-    void deleteVehicleByRegistrationNumberIgnoreCase(String registration_number);
+    Long deleteVehicleByRegistrationNumberIgnoreCase(String registration_number);
 
 }

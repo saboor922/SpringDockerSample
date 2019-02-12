@@ -42,9 +42,7 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public void deleteVehicle(String registration) {
-        vehicleRepositoryImpl.deleteVehicleByRegistrationNumberIgnoreCase(registration);
+    public Long deleteVehicle(String registration) {
+        return vehicleRepositoryImpl.deleteVehicleByRegistrationNumberIgnoreCase(registration);
     }
-
-
 }

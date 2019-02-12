@@ -43,6 +43,15 @@ public class Vehicle {
         this.year = year;
     }
 
+    public Vehicle(BigInteger _id, String registration_number, String manufacturer, String model, String subModel, int year, List<String> category) {
+        this(registration_number, manufacturer, year);
+        this._id = _id;
+        this.model = model;
+        this.subModel = subModel;
+        this.category = category;
+
+    }
+
     public BigInteger get_id() {
         return _id;
     }

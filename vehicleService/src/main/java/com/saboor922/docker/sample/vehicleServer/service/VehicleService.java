@@ -16,5 +16,5 @@ public interface VehicleService {
 
     Vehicle updateVehicle(Vehicle vehicle, String registration);
 
-    void deleteVehicle(String registration);
+    Long deleteVehicle(String registration);
 }
